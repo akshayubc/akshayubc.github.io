@@ -1,496 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Akshay K.</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn_dZS9WduW7uN57WNoZ9oXvQjMc7OE93cRXiqGbn23Q&s" />
-
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-
-  <link rel="stylesheet" href="css/aos.css">
-
-  <link rel="stylesheet" href="css/ionicons.min.css">
-
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn_dZS9WduW7uN57WNoZ9oXvQjMc7OE93cRXiqGbn23Q&s">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay K.</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking on a nav link
+            const navLinks = document.querySelectorAll('#navMenu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('show');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = navMenu.contains(event.target);
+                const isClickOnButton = mobileMenuBtn.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnButton && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>   
 </head>
-
 <body>
-
-  <div class="KW_progressContainer">
-    <div class="KW_progressBar">
-
-    </div>
-  </div>
-  <div class="page">
-<!--     <nav id="colorlib-main-nav" role="navigation">
-      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
-      <div class="js-fullheight colorlib-table">
-        <div class="colorlib-table-cell js-fullheight">
-          <div class="row no-gutters">
-            <div class="col-md-12 text-center">
-              <h1 class="mb-4"><a class="logo">AK</a></h1>
-              <ul>
-<!--                 <li class="active"><a href="https://drive.google.com/file/d/1XcbocJ2mxR2nb4ty7AhIJ21qxub0Z2V1/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Resume</span></a></li> -->
-<!--                 <li class="active"><a href="index.html" target="_blank"><span>Home</span></a></li>
-<!--                 <li><a href="https://drive.google.com/file/d/1XcbocJ2mxR2nb4ty7AhIJ21qxub0Z2V1/view?usp=sharing" -->
-<!--                     target="blank"><span>Blog Posts</span></a></li><a> -->
-                  <!--                   <li><a href="services.html"><span><small>03</small>Skills</span></a></li> --> 
-<!--               </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav> -->
-
-    <div id="colorlib-page">
-      <header>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="colorlib-navbar-brand">
-                <a class="colorlib-logo" href="index.html"><span class="logo-img"
-                    style="background-image: url(images/person_1.jpg);"></span>Akshay K.</a>
-              </div>
-<!--               <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-            </div> -->
-          </div>
-        </div>
-      </header>
-
-      <section class="home-slider owl-carousel js-fullheight">
-        <div class="slider-item js-fullheight">
-          <div class="overlay"></div>
-          <div class="container">
-            <div class="row slider-text align-items-center text-center justify-content-center"
-              data-scrollax-parent="true">
-              <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '500%' }">
-                <p><a href="#" class="scroll">Hello! I'm</a></p>
-                <h1 class="mb-3" data-scrollax="properties: { translateY: '500%', opacity: 1.6 }">Akshay</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slider-item js-fullheight">
-          <div class="overlay"></div>
-          <div class="container">
-            <div class="row slider-text align-items-center text-center justify-content-center"
-              data-scrollax-parent="true">
-              <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '500%'}">
-                <p><a href="#" class="scroll">I LOVE TO</a></p>
-                <h1 class="mb-3" data-scrollax="properties: {translateY: '500%', opacity: 1.6}">Design.Animate.Code.</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- END slider -->
-
-      <section class="ftco-section about-section">
-        <div class="container">
-          <div class="row d-flex" data-scrollax-parent="true">
-            <div class="col-md-4 author-img" style="background-image: url(images/author-1.png); background-size: 110% auto; background-position: center; background-repeat: no-repeat;"
-    data-scrollax=" properties: { translateY: '-0%'}"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-6 wrap ftco-animate">
-              <div class="about-desc">
-                <h1 class="bold-text">About</h1>
-                <div class="p-5">
-                  <h2 class="mb-5">B.A., The University of British Columbia</h2>
-<!--                   <h3>Major: Cognitive Systems</h3>-->
-                  <p>Love experimenting with emerging technologies.</p> 
-                  <h5><span>Work Experience:</span></h5>
-                    <span>
-                      <ul>
-                        <li>Designer at Motorola Solutions </li>
-                        <li>E-Learning Developer & Instructional Designer at TrainingPort </li>
-                        <li>Sr. Teaching Assistant at UBC </li>
-                        <li>Content & Insights Specialist at Interfor Corporation</li>
-                        <li>Learning Technology & Digital Media Specialist at UBC Integrated Renewal Program (IRP) </li>
-                        <li>Head Editor (Media) at The Ubyssey Publications</li>
-                        <li>Vice-President at Exun Clan</li>
-                    </span>
-
-                    </ul>
-                    
-                    <ul class="ftco-footer-social list-unstyled mt-4">
-                      <li><a href="https://github.com/akhand227/" target="blank"><span class="icon-github"></span></a>
-                      </li>
-                      <li><a href="https://www.linkedin.com/in/akhand99/" target="blank"><span
-                            class="icon-linkedin"></span></a></li>
-                       <li><a href="https://www.behance.net/akshayc5ea" target="blank"><span
-                            class="icon-behance"></span></a></li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-          <section class="ftco-section">
-        <div class="container">
-          <div class="row justify-content-center mb-5 pb-5">
-            <div class="col-md-7 text-center heading-section ftco-animate">
-              <span>Projects</span>
-              <h2>Motion Graphics and Design</h2>
-            </div>
-          </div>
-
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://www.youtube.com/watch?v=Z0jztrM3p6Y&ab_channel=TheUniversityofBritishColumbia" target="blank"
-              class="image d-flex justify-content-center align-items-center"
-              style="background-image: url('images/uwt.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text">
-              <h4 class="subheading"> Ad Campaign | UBC ERP Tutorial Platform Launch</h4>
-              <h2 class="heading"><a href="https://www.youtube.com/watch?v=Z0jztrM3p6Y&ab_channel=TheUniversityofBritishColumbia"
-                  target="blank">Workday @ UBC </a></h2>
-              <p>Collaborated with the Office of the Dean, UBC Marketing Team, and external contractors to prepare a launch video for Workday. </p>
-              <p><a href="https://www.youtube.com/watch?v=Z0jztrM3p6Y&ab_channel=TheUniversityofBritishColumbia" target="blank">View
-                  Project</a></p>
-            </div>
-          </div>
-            <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://drive.google.com/file/d/1aDJpUHPzxCvettaD_Sz6rfPFJxL4KhG7/view?usp=sharing" target="blank"
-              class="image order-2 d-flex justify-content-center align-items-center"
-              style="background-image: url('images/forestry.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text order-1">
-              <h4 class="subheading">Learning Design | Interfor Old Growth </h4>
-              <h2 class="heading"><a
-                  href="https://drive.google.com/file/d/1aDJpUHPzxCvettaD_Sz6rfPFJxL4KhG7/view?usp=sharing"
-                  target="blank">Old Growth Factsheet</a></h2>
-              <p>Designed in collaboration with Interfor's Forestry researchers to address misconceptions around British Columbia's logging practices.
-</p>
-              <p><a href="https://drive.google.com/file/d/1aDJpUHPzxCvettaD_Sz6rfPFJxL4KhG7/view?usp=sharing"
-                  target="blank">View
-                  Project</a></p>
-            </div>
-          </div>
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://www.behance.net/gallery/111528883/Makery-Food-Delivery-App" target="blank"
-              class="image d-flex justify-content-center align-items-center"
-              style="background-image: url('images/mk.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text">
-              <h4 class="subheading">Concept App | UI Design</h4>
-              <h2 class="heading"><a href="https://www.behance.net/gallery/111528883/Makery-Food-Delivery-App"
-                  target="blank">Makery: The Online Bakery </a></h2>
-              <p>An e-commerce app concept, designed for discovering local bakeries.</p>
-              <p><a href="https://www.behance.net/gallery/111528883/Makery-Food-Delivery-App" target="blank">View
-                  Project</a></p>
-            </div>
-          </div>
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://www.behance.net/gallery/111407367/Social-Media-AdvertisingMarketing-Kit" target="blank"
-              class="image order-2 d-flex justify-content-center align-items-center"
-              style="background-image: url('images/sm.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text order-1">
-              <h4 class="subheading">Design | Social Media Advertising</h4>
-              <h2 class="heading"><a
-                  href="https://www.behance.net/gallery/111407367/Social-Media-AdvertisingMarketing-Kit"
-                  target="blank">Social Media ToolKit</a></h2>
-              <p>A social media marketing template, designed to support companies in promoting events, products, and other initiatives.
-</p>
-              <p><a href="https://www.behance.net/gallery/111407367/Social-Media-AdvertisingMarketing-Kit"
-                  target="blank">View
-                  Project</a></p>
-            </div>
-          </div>
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://www.behance.net/gallery/90654683/Active-The-fitness-app" target="blank"
-              class="image d-flex justify-content-center align-items-center"
-              style="background-image: url('images/work-1.jpg'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text">
-              <h4 class="subheading">Concept App | UI Design & Animation</h4>
-              <h2 class="heading"><a href="https://www.behance.net/gallery/90654683/Active-The-fitness-app"
-                  target="blank">Active: The Fitness App</a></h2>
-              <p>An interactive fitness app that focuses on gamifying user’s journey towards a healthier lifestyle.</p>
-              <p><a href="https://www.behance.net/gallery/90654683/Active-The-fitness-app" target="blank">View
-                  Project</a></p>
-               <p><a href="https://www.youtube.com/watch?v=cTtCH8NfKGI" target="blank">View Trailer</a></p> 
-            </div> 
-          </div>
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://youtu.be/ToiV7Sm6qRg" target="blank"
-              class="image order-2 d-flex justify-content-center align-items-center"
-              style="background-image: url('images/sc.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text">
-              <h4 class="subheading">Concept UI | Animation</h4>
-              <h2 class="heading"><a href="https://youtu.be/ToiV7Sm6qRg" target="blank">Snapchat Spectacles 2.0
-                  User
-                  Interface</a></h2>
-              <p>An enchanced version of Snapchat Spectacles’ user interface.</p>
-              <p><a href="https://youtu.be/ToiV7Sm6qRg" target="blank">User-Interface Concept Video</a></p>
-            </div>
-          </div>
-<!--           <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://www.behance.net/gallery/57887451/Dhwani-The-Smart-Sound-Detection-App" target="blank"
-              class="image d-flex justify-content-center align-items-center"
-              style="background-image: url('images/dhwani.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text order-1">
-              <h4 class="subheading">Design | Web Application</h4>
-              <h2 class="heading"><a
-                  href="https://www.behance.net/gallery/57887451/Dhwani-The-Smart-Sound-Detection-App"
-                  target="blank">Dhwani</a></h2>
-              <p>Dhwani is a smart sound-recognition platform that allows the hearing-impaired to live independent and more unconstrained life. 
-</p>
-              <p><a href="https://www.behance.net/gallery/57887451/Dhwani-The-Smart-Sound-Detection-App"
-                  target="blank">View
-                  Project</a></p>
-              <p><a href="https://drive.google.com/file/d/1pNj9lF4kfXkcYcRA7jF-WXcUtpQGOgLE/view?usp=sharing"
-                  target="blank">More
-                  Details</a></p>
-              <p><a href="https://www.youtube.com/watch?v=Uz4o4fwPcF0&feature=youtu.be&ab_channel=AkshayKhandelwal"
-                  target="blank">Official Trailer</a></p>
-            </div>
-          </div> -->
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://drive.google.com/file/d/0Bwn2hpDgAebTSEZKX2VYX1hlRzg/view" target="blank"
-              class="image d-flex justify-content-center align-items-center"
-              style="background-image: url('images/panacea.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text">
-              <h4 class="subheading">Case Research | Space Debris Elimination Systems</h4>
-              <h2 class="heading"><a href="https://drive.google.com/file/d/0Bwn2hpDgAebTSEZKX2VYX1hlRzg/view" target="blank">Panacea: Space Debris Elimination System</a> </h2>
-                <p>Research paper proposing an innovative solution to the problem of accumulated space debris. Praised by NASA and world-renowned astronauts at the Kennedy Space Centre.</p>
-              <p><a href="https://drive.google.com/file/d/0Bwn2hpDgAebTSEZKX2VYX1hlRzg/view" target="blank">View
-                  Project</a></p>
-            </div>
-          </div>
-<!--           <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://www.behance.net/gallery/194238579/Maple-Tails-Landing-Page-UI-Design" target="blank"
-              class="image d-flex order-2 justify-content-center align-items-center"
-              style="background-image: url('images/mt.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text">
-              <h4 class="subheading"> UX Research | Home and Product Page Design</h4>
-              <h2 class="heading"><a href="https://www.behance.net/gallery/194238579/Maple-Tails-Landing-Page-UI-Design"
-                  target="blank">Maple Tails </a></h2>
-              <p>Designed for a pet apparel startup, highlighting unique and trendy clothing lines.</p>
-              <p><a href="https://www.behance.net/gallery/194238579/Maple-Tails-Landing-Page-UI-Design" target="blank">View
-                  Project</a></p>
-            </div>
-          </div> -->
-        </div>
-    </div>
-
-      <section class="ftco-section">
-        <div class="container">
-          <div class="row justify-content-center mb-5 pb-5">
-            <div class="col-md-7 text-center heading-section ftco-animate">
-              <span>Projects</span>
-              <h2>Web Design & Development</h2>
-            </div>
-          </div>
-            <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://64b1db1e8584bd28b7a7082c--charming-belekoy-852ce5.netlify.app/" target="blank"
-              class="image d-flex order-2 justify-content-center align-items-center"
-              style="background-image: url('images/rentblox.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text">
-              <h4 class="subheading">Web Development | ReactJS</h4>
-              <h2 class="heading"><a href="https://64b1db1e8584bd28b7a7082c--charming-belekoy-852ce5.netlify.app/" target="blank">Rentblox</a>
-              </h2>
-              <p>Developed a single-page application, streamlining the rental process for an e-commerce platform. </p>
-              <p><a href="https://64b1db1e8584bd28b7a7082c--charming-belekoy-852ce5.netlify.app/" target="blank">View Project</a></p>
-            </div>
-          </div>
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://akshayk42.github.io/pixelarity.html" target="blank"
-              class="image d-flex justify-content-center align-items-center"
-              style="background-image: url('images/pixel.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text">
-              <h4 class="subheading">Web Development | PHP</h4>
-              <h2 class="heading"><a href="https://akshayk42.github.io/pixelarity.html" target="blank">Pixelarity</a>
-              </h2>
-              <p>Facial recognition made easy: a simple, powerful image processing library for developers.</p>
-              <p><a href="https://akshayk42.github.io/pixelarity.html" target="blank">View Project</a></p>
-<!--               <p><a href="https://www.youtube.com/watch?v=Q7bxDWWXItc" target="blank">View Trailer</a></p> -->
-            </div>
-          </div>
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="https://akshayubc.github.io/responsive-landing-page/" target="blank"
-              class="image order-2 d-flex justify-content-center align-items-center"
-              style="background-image: url('tbees.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-              <div class="icon d-flex text-center justify-content-center align-items-center">
-                <span class="icon-search"></span>
-              </div>
-            </a>
-            <div class="text order-1">
-              <h4 class="subheading">Web Design | HTML+CSS+JS</h4>
-              <h2 class="heading"><a href="https://akshayubc.github.io/responsive-landing-page/" target="blank">Travel
-                  Bees Landing Page</a></h2>
-              <p>A responsive front-end landing page for a travel agency.</p>
-              <p><a href="https://akshayubc.github.io/responsive-landing-page/" target="blank">View Project</a></p>
-<!--               <p><a href="https://github.com/akshayubc/responsive-landing-page" target="blank">View Code on GitHub</a>
-              </p> -->
-            </div>
-          </div>
-          <div class="row no-gutters">
-            <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-              <a href="https://splendid-banoffee-a369d7.netlify.app/#explore" target="blank"
-                class="image d-flex justify-content-center align-items-center"
-                style="background-image: url('images/doggohero.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-                <div class="icon d-flex text-center justify-content-center align-items-center">
-                  <span class="icon-search"></span>
-                </div>
-              </a>
-              <div class="text order-1">
-                <h4 class="subheading">Product Development | ReactJS, Figma, UX Research</h4>
-                <h2 class="heading"><a href="https://splendid-banoffee-a369d7.netlify.app/#explore" target="blank">Maple Tails</a></h2>
-              <p>A front-end web page designed for a pet apparel startup, highlighting unique and trendy clothing lines.</p>
-                <p><a href="https://splendid-banoffee-a369d7.netlify.app/#explore" target="blank">View Project</a></p>
-              </div>
-            </div>
-          <div class="row no-gutters">
-            <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-              <a href="https://akshayubc.github.io/coak/" target="blank"
-                class="image d-flex order-2 justify-content-center align-items-center"
-                style="background-image: url('images/coak.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-                <div class="icon d-flex text-center justify-content-center align-items-center">
-                  <span class="icon-search"></span>
-                </div>
-              </a>
-              <div class="text order-1">
-                <h4 class="subheading">Web Development | HTML, CSS, JS, Web Speech API</h4>
-                <h2 class="heading"><a href="https://akshayubc.github.io/coak/" target="blank">Co.aK</a></h2>
-                <p>Code by speaking. Coak enables you to code faster without worrying about syntax with the help of user-friendly documentation. </p>
-                <p><a href="https://akshayubc.github.io/coak/" target="blank">View Project</a></p>
-              </div>
-            </div>
-<!--             <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-              <a href="https://www.covidhope.ca/" target="blank"
-                class="image order-2 d-flex justify-content-center align-items-center"
-                style="background-image: url('images/chope.png'); " data-scrollax=" properties: { translateY: '-30%'}">
-                <div class="icon d-flex text-center justify-content-center align-items-center">
-                  <span class="icon-search"></span>
-                </div>
-              </a>
-              <div class="text order-1">
-                <h4 class="subheading">Web Development | Scraping</h4>
-                <h2 class="heading"><a href="http://covidhope.ca/" target="blank">CovidHope.ca</a></h2>
-                <p>A website to help you keep track of all the positive news during such unprecedented times. Click on
-                  the link to see how the world reopens and how humanity has come together to battle this virus. </p>
-                <p><a href="http://covidhope.ca/" target="blank">View Project</a></p>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </section>
-
- 
-
-      <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-          <div class="row mb-5 justify-content-center">
-            <div class="col-md-5 text-center">
-              <div class="ftco-footer-widget mb-5">
-                <ul class="ftco-footer-social list-unstyled">
-                  <li class="ftco-animate"><a href="https://www.behance.net/akshayc5ea" target="blank"><span
-                        class="icon-behance"></span></a></li>
-                  <li class="ftco-animate"><a href="https://github.com/akhand227/" target="blank"><span
-                        class="icon-github"></span></a></li>
-                  <li class="ftco-animate"><a href="https://www.linkedin.com/in/akhand99/" target="blank"><span
-                        class="icon-linkedin"></span></a></li>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">Akshay K.</div>
+            <nav>
+                <ul>
+                    <!-- <li><a href="#about">About</a></li> -->
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contax">Contact</a></li>
                 </ul>
-              </div>
-              <div class="ftco-footer-widget">
-                <h2 class="mb-3">Coffee Chat?</h2>
-                <p class="h3 email"><a href="#">akshay.exun@gmail.com</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-
-          </div>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
         </div>
-      </footer>
+    </header>
 
-      <!-- loader -->
-      <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-            stroke="#F96D00" /></svg></div>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span style="color: var(--primary-color)">Akshay</span></h1>
+                <p>Love experimenting with emerging technologies.</p>
+                <a href="#projects" class="btn">My Work</a>
+                <a href="#contax" class="btn1">Contact</a>
+            </div>
+            <div class="hero-image">
+                <!-- SVG Illustration of person working on computer -->
+                <img src="hero-banner1.png" width="50%" >
+            </div>
+        </div>
+        <!-- Geometric shapes for background -->
+        <div class="geometric-shapes circle1"></div>
+        <div class="geometric-shapes circle2"></div>
+    </section>
 
+    <!-- Brand Bar
+    <section class="brand-bar">
+        <div class="container brands">
+            <img src="/api/placeholder/120/30" alt="Brand Logo 1">
+            <img src="/api/placeholder/120/30" alt="Brand Logo 2">
+            <img src="/api/placeholder/120/30" alt="Brand Logo 3">
+            <img src="/api/placeholder/120/30" alt="Brand Logo 4">
+            <img src="/api/placeholder/120/30" alt="Brand Logo 5">
+        </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <!-- <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">What I Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="20" width="60" height="60" rx="5" fill="#f5f5f5" stroke="#2e8b57" stroke-width="2"/>
+                        <line x1="30" y1="35" x2="70" y2="35" stroke="#2e8b57" stroke-width="2"/>
+                        <line x1="30" y1="50" x2="70" y2="50" stroke="#2e8b57" stroke-width="2"/>
+                        <line x1="30" y1="65" x2="50" y2="65" stroke="#2e8b57" stroke-width="2"/>
+                    </svg>
+                    <h3 class="service-title">Product Design</h3>
+                    <p class="service-description">Creating intuitive, user-centered digital products that solve real problems through careful research and thoughtful execution.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="25" fill="#f5f5f5" stroke="#2e8b57" stroke-width="2"/>
+                        <path d="M50 25 L50 50 L65 65" stroke="#2e8b57" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="50" r="3" fill="#2e8b57"/>
+                    </svg>
+                    <h3 class="service-title">Learning Design</h3>
+                    <p class="service-description">Guiding the visual language of your brand across all touchpoints to create a cohesive and impactful presence.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="30" width="60" height="40" rx="3" fill="#f5f5f5" stroke="#2e8b57" stroke-width="2"/>
+                        <polyline points="25,40 35,50 25,60" stroke="#2e8b57" stroke-width="2" fill="none"/>
+                        <polyline points="75,40 65,50 75,60" stroke="#2e8b57" stroke-width="2" fill="none"/>
+                    </svg>
+                    <h3 class="service-title">Animations</h3>
+                    <p class="service-description">Building responsive, accessible, and performant websites and applications using modern technologies and best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+   <!-- Projects Section -->
+   <section class="section projects" id="projects">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <a href="https://www.youtube.com/watch?v=Z0jztrM3p6Y&ab_channel=TheUniversityofBritishColumbia" target="_blank">
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('uwt.png');">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Workday @ UBC</h3>
+                    <p class="project-category">Design & Motion Graphics | UBC ERP Tutorials</p>
+                    <p>Collaborated with the Office of the Dean, UBC Marketing Team, and external contractors to prepare a launch video for Workday ERP System and Tutorial Platform.</p>
+                </div>
+            </div>
+        </a>
+            
+                 <!-- Project 4 -->
+                 <a href="https://drive.google.com/file/d/1uzatZo0w7S3XqBs_AW5ZDuTTdnvp68td/view?usp=sharing" target="_blank">
+                 <div class="project-card">
+                    <div class="project-image" style="background-image: url('exting.png');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Fire Extinguisher Training</h3>
+                        <p class="project-category">Compliance Training | Articulate Storyline</p>
+                        <p>Designed and delivered a gamified, scenario-based lesson, enhancing the learning experience for aviation professionals.</p>
+                    </div>
+                </div>
+            </a>
+           
+            
+              <!-- Project 2 -->
+              <a href="https://drive.google.com/file/d/1aDJpUHPzxCvettaD_Sz6rfPFJxL4KhG7/view?pli=1" target="_blank">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('forestry.png');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Old Growth Training Factsheet</h3>
+                        <p class="project-category">Learning Design | Old Growth Factsheet</p>
+                        <p>Designed in collaboration with Interfor's Forestry researchers to address misconceptions around British Columbia's logging practices.</p>
+                    </div>
+                </div>
+                </a>
+
+                <!-- Project 3 -->
+            <a href="https://www.behance.net/gallery/111407367/Social-Media-AdvertisingMarketing-Kit" target="_blank">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://www.renderhub.com/davidzafra1/brain/brain-01.jpg');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">3D Interactive Brain Model</h3>
+                        <p class="project-category">Instructional Design | Blender, JavaScript</p>
+                        <p>Developed an interactive 3D brain model with clickable hotspots, providing detailed labels and information to enhance spatial awareness and learning for students.</p>
+                        </div>
+                </div>
+            </a>
+
+                 <!-- Project 3 -->
+            <a href="https://www.behance.net/gallery/111407367/Social-Media-AdvertisingMarketing-Kit" target="_blank">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('sm.png');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Social Media Ads Toolkit</h3>
+                        <p class="project-category">Design | Social Media Advertising</p>
+                        <p>A social media marketing template, designed to support companies in promoting events, products, and other initiatives. Achieved over 1,100+ downloads.</p>
+                    </div>
+                </div>
+            </a>
+
+             <!-- Project 3 -->
+             <a href="https://colab.research.google.com/github/akhand227/link-tracking/blob/main/Link%20Validator.ipynb" target="_blank">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('validate-links.png');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SCORM Citation Tracking</h3>
+                        <p class="project-category">Data Analysis | Python | Integrated with LMS</p>
+                        <p>Developed an automation script to streamline the updating of aviation training materials ensuring compliance with current FAA, EASA, and Transport Canada regulations.</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 5 -->
+            <a href="https://64b1db1e8584bd28b7a7082c--charming-belekoy-852ce5.netlify.app/" target="_blank">
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('rentblox.png');">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">RentBlox.ca</h3>
+                    <p class="project-category">Web Development | ReactJS | Freelance Work </p>
+                    <p>Developed a single-page application, streamlining the rental process for an e-commerce platform.</p>
+                </div>
+            </div>
+        </a>
+
+         <!-- Project 5 -->
+         <a href="https://akshayubc.github.io/coak/" target="_blank">
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('coak.png');">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Co.ak (Beta)</h3>
+                    <p class="project-category">Web Development | HTML, CSS, JS, Web Speech API </p>
+                    <p>Code by speaking. Coak enables you to code faster without worrying about syntax with the help of user-friendly documentation.</p>
+                </div>
+            </div>
+        </a>
+        </div>
     </div>
+</section>
 
-  </div>
+<!-- Experience Section -->
+<section class="section experience" id="experience">
+    <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="experience-timeline">
+            <div class="timeline-line"></div>
+            
+            <!-- <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title">Founder and CEO</h3>
+                    <p class="experience-company">LRNR</p>
+                    <p>Redesigned core product interfaces resulting in 40% improvement in user task completion and conducted user research to inform product strategy.</p>
+                </div>
+                <div class="year-badge">2025 - Present</div>
+            </div> -->
 
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title">Designer</h3>
+                    <p class="experience-company">Motorola Solutions</p>
+                    <!-- <p>Led design for major client projects, mentored junior designers, and established design systems that improved consistency and workflow efficiency.</p> -->
+                </div>
+                <div class="year-badge">2024-2025</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title">E-Learning Developer</h3>
+                    <p class="experience-company">TrainingPort.net</p>
+                    <!-- <p>Redesigned core product interfaces resulting in 40% improvement in user task completion and conducted user research to inform product strategy.</p> -->
+                </div>
+                <div class="year-badge">2023-2024</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title">Sr. Teaching Assistant</h3>
+                    <p class="experience-company">University of British Columbia</p>
+                    <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
+                </div>
+                <div class="year-badge">2022-2023</div>
+            </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title">Content and Insights Specialist</h3>
+                    <p class="experience-company">Interfor Corporation</p>
+                    <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
+                </div>
+                <div class="year-badge">2021</div>
+            </div>
 
-</body>
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title">Head Editor - Media</h3>
+                    <p class="experience-company">The Ubyssey Publications</p>
+                    <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
+                </div>
+                <div class="year-badge">2020-2021</div>
+            </div>
 
-</html>
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title">Learning Technology & Digital Media Specialist</h3>
+                    <p class="experience-company">University of British Columbia</p>
+                    <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
+                </div>
+                <div class="year-badge">2020</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title">Vice-President</h3>
+                    <p class="experience-company">Exun Clan</p>
+                    <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
+                </div>
+                <div class="year-badge">2018-2019</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content" id="contax">
+                <div class="footer-col" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h2 style="font-size: 3rem; margin-bottom: 30px; color: white;">Coffee Chat?</h2>
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 40px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" style="margin-right: 15px; fill: var(--secondary-color);">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <a href="mailto:akshay.ubcv@gmail.com" style="font-size: 1.5rem; color: white; text-decoration: none; transition: color 0.3s ease;">akshay.ubcv@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-links" style="justify-content: center; margin-bottom: 40px;">
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Akshay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+   
+    <!-- Contact Section -->
+    <!-- <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Coffee Chat?</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Have a project in mind or just want to chat? I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+                    <p>Email: akshay.ubcv@gmail.com<br></p>                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email"> -->
