@@ -48,24 +48,7 @@
             const visibleItems = Math.floor(marquee.offsetWidth / itemWidth);
             const maxIndex = Math.max(0, certItems.length - visibleItems);
 
-            // Certificate links (you can update these with your actual certificate URLs)
-            const certLinks = [
-                'https://example.com/cert1',
-                'https://example.com/cert2', 
-                'https://example.com/cert3',
-                'https://example.com/cert4',
-                'https://example.com/cert5',
-                'https://example.com/cert6'
-            ];
-
-            // Add click handlers to certificates
-            certItems.forEach((item, index) => {
-                item.addEventListener('click', function() {
-                    if (certLinks[index]) {
-                        window.open(certLinks[index], '_blank');
-                    }
-                });
-            });
+            // Certificate click functionality removed - certificates are now display-only
 
             // Previous button
             prevBtn.addEventListener('click', function() {
