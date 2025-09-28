@@ -456,6 +456,7 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
         }
         
         .year-badge {
@@ -478,6 +479,143 @@
             font-size: 1rem;
             color: var(--primary-color);
             margin-bottom: 15px;
+        }
+
+        /* Company Logo Styles */
+        .company-logo {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-image {
+            max-width: 120px;
+            max-height: 70px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo-image:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Certifications Section */
+        .certifications {
+            background-color: var(--light-bg);
+        }
+
+        .certifications-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .certifications-marquee {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .certifications-marquee::-webkit-scrollbar {
+            display: none;
+        }
+
+        .certification-item {
+            flex: 0 0 280px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .cert-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .certification-item:hover .cert-image {
+            transform: scale(1.05);
+        }
+
+        .cert-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .certification-item:hover .cert-overlay {
+            transform: translateY(0);
+        }
+
+        .cert-overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .cert-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .cert-slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cert-slider-btn:hover {
+            background-color: var(--dark-bg);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .cert-prev {
+            left: -25px;
+        }
+
+        .cert-next {
+            right: -25px;
         }
         
         /* Testimonials Section */
@@ -685,6 +823,12 @@
             .year-badge {
                 left: 30px;
             }
+
+            /* Mobile logo adjustments */
+            .logo-image {
+                max-width: 90px;
+                max-height: 60px;
+            }
             
             .contact-content {
                 flex-direction: column;
@@ -770,5 +914,30 @@
             
             .testimonial-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Extra small screens logo adjustments */
+            .logo-image {
+                max-width: 75px;
+                max-height: 50px;
+            }
+
+            /* Mobile certification adjustments */
+            .certification-item {
+                flex: 0 0 250px;
+            }
+
+            .cert-slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .cert-prev {
+                left: -20px;
+            }
+
+            .cert-next {
+                right: -20px;
             }
         }
