@@ -35,6 +35,103 @@
                 }
             });
         });
+
+        // Certifications slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const marquee = document.getElementById('certificationsMarquee');
+            const prevBtn = document.getElementById('certPrev');
+            const nextBtn = document.getElementById('certNext');
+            const certItems = document.querySelectorAll('.certification-item');
+            
+            let currentIndex = 0;
+            const itemWidth = 300; // 280px + 20px gap
+            const visibleItems = Math.floor(marquee.offsetWidth / itemWidth);
+            const maxIndex = Math.max(0, certItems.length - visibleItems);
+
+            // Certificate links (you can update these with your actual certificate URLs)
+            const certLinks = [
+                'https://example.com/cert1',
+                'https://example.com/cert2', 
+                'https://example.com/cert3',
+                'https://example.com/cert4',
+                'https://example.com/cert5',
+                'https://example.com/cert6'
+            ];
+
+            // Add click handlers to certificates
+            certItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    if (certLinks[index]) {
+                        window.open(certLinks[index], '_blank');
+                    }
+                });
+            });
+
+            // Previous button
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    marquee.scrollLeft = currentIndex * itemWidth;
+                }
+            });
+
+            // Next button
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    marquee.scrollLeft = currentIndex * itemWidth;
+                }
+            });
+
+            // Auto-hide buttons when at boundaries
+            function updateButtonVisibility() {
+                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+            }
+
+            updateButtonVisibility();
+
+            // Update on scroll
+            marquee.addEventListener('scroll', function() {
+                currentIndex = Math.round(marquee.scrollLeft / itemWidth);
+                updateButtonVisibility();
+            });
+
+            // Touch/swipe support for mobile
+            let startX = 0;
+            let isScrolling = false;
+
+            marquee.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                isScrolling = true;
+            });
+
+            marquee.addEventListener('touchmove', function(e) {
+                if (!isScrolling) return;
+                e.preventDefault();
+            });
+
+            marquee.addEventListener('touchend', function(e) {
+                if (!isScrolling) return;
+                isScrolling = false;
+                
+                const endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > 50) { // Minimum swipe distance
+                    if (diff > 0 && currentIndex < maxIndex) {
+                        // Swipe left - next
+                        currentIndex++;
+                        marquee.scrollLeft = currentIndex * itemWidth;
+                    } else if (diff < 0 && currentIndex > 0) {
+                        // Swipe right - previous
+                        currentIndex--;
+                        marquee.scrollLeft = currentIndex * itemWidth;
+                    }
+                    updateButtonVisibility();
+                }
+            });
+        });
     </script>   
 </head>
 <body>
@@ -48,6 +145,7 @@
                     <li><a href="#srvices">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#contax">Contact</a></li>
                 </ul>
             </nav>
@@ -66,7 +164,7 @@
             </div>
             <div class="hero-image">
                 <!-- SVG Illustration of person working on computer -->
-                <img src="hero-banner1.png" width="50%" >
+                <img src="images/hero-banner1.png" width="50%" >
             </div>
         </div>
         <!-- Geometric shapes for background -->
@@ -94,7 +192,7 @@
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-book"></i>                </div>
-                <h3 class="service-title">Instructional Design</h3>
+                <h3 class="service-title">eLearning Development</h3>
                 <p class="service-description">Learning Content Development</p>
             </div>
             
@@ -174,7 +272,7 @@
             <!-- Project 1 -->
             <a href="https://www.youtube.com/watch?v=Z0jztrM3p6Y&ab_channel=TheUniversityofBritishColumbia" target="_blank">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('uwt.png');">
+                <div class="project-image" style="background-image: url('images/uwt.png');">
                 </div>
                 <div class="project-info">
                     <h3 class="project-title">Workday @ UBC</h3>
@@ -187,11 +285,11 @@
                  <!-- Project 4 -->
                  <a href="https://drive.google.com/file/d/1uzatZo0w7S3XqBs_AW5ZDuTTdnvp68td/view?usp=sharing" target="_blank">
                  <div class="project-card">
-                    <div class="project-image" style="background-image: url('exting.png');">
+                    <div class="project-image" style="background-image: url('images/exting.png');">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Fire Extinguisher Training</h3>
-                        <p class="project-category">Compliance Training (Blender, After Effects, Storyline)| Trainingport</p>
+                        <p class="project-category">Compliance Training (Blender, After Effects, Storyline) | Trainingport</p>
                         <p>Designed and delivered an adaptive, gamified, scenario-based lesson that enhanced the learning experience for aviation professionals.</p>
                     </div>
                 </div>
@@ -200,7 +298,7 @@
 <!--              <!-- Project 2  -->
               <a href="https://drive.google.com/file/d/120Y0CGJvLriMPM2He7hQSkAJY_dyqApo/view?usp=sharing" target="_blank">
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('haloinstall.png');">
+                    <div class="project-image" style="background-image: url('images/haloinstall.png');">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Device Installation Videos</h3>
@@ -214,7 +312,7 @@
               <!-- Project 2 -->
               <a href="https://drive.google.com/file/d/1aDJpUHPzxCvettaD_Sz6rfPFJxL4KhG7/view?pli=1" target="_blank">
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('forestry.png');">
+                    <div class="project-image" style="background-image: url('images/forestry.png');">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Old Growth Training Factsheet</h3>
@@ -239,7 +337,7 @@
       
              <a href="https://colab.research.google.com/github/akhand227/link-tracking/blob/main/Link%20Validator.ipynb" target="_blank">
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('validate-links.png');">
+                    <div class="project-image" style="background-image: url('images/validate-links.png');">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">SCORM Citation Tracking</h3>
@@ -251,10 +349,10 @@
 
              <a href="https://www.youtube.com/watch?v=MxhaTj35Uxg&ab_channel=xay" target="_blank">
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('iphone.png');">
+                    <div class="project-image" style="background-image: url('images/iphone.png');">
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">2D Objects Animation</h3>
+                        <h3 class="project-title">2D Objects AnEimation</h3>
                         <p class="project-category">Animation (After Effects) | Exun Clan</p>
                         <p>Crafted dynamic 2D animation transitions in After Effects to demonstrate the transformation of simple shapes into complex objects through motion graphics.</p>
                     </div>
@@ -263,7 +361,7 @@
             
             <a href="https://www.behance.net/gallery/111407367/Social-Media-AdvertisingMarketing-Kit" target="_blank">
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('sm.png');">
+                    <div class="project-image" style="background-image: url('images/sm.png');">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Social Media Ads Toolkit</h3>
@@ -275,7 +373,7 @@
 
             <a href="https://www.behance.net/gallery/194238579/Maple-Tails-Landing-Page-UI-Design" target="_blank">
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('doggohero.png');">
+                    <div class="project-image" style="background-image: url('images/doggohero.png');">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Maple Tails</h3>
@@ -287,7 +385,7 @@
           
             <a href="https://64b1db1e8584bd28b7a7082c--charming-belekoy-852ce5.netlify.app/" target="_blank">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('rentblox.png');">
+                <div class="project-image" style="background-image: url('images/rentblox.png');">
                 </div>
                 <div class="project-info">
                     <h3 class="project-title">RentBlox.ca</h3>
@@ -300,7 +398,7 @@
          
          <a href="https://akshayubc.github.io/coak/" target="_blank">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('coak.png');">
+                <div class="project-image" style="background-image: url('images/coak.png');">
                 </div>
                 <div class="project-info">
                     <h3 class="project-title">Co.ak (Beta)</h3>
@@ -311,7 +409,7 @@
         </a>
              <a href="https://www.behance.net/gallery/57696489/Planetoid-A-web-based-game" target="_blank">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('Planetoid.jpg');">
+                <div class="project-image" style="background-image: url('images/Planetoid.jpg');">
                 </div>
                 <div class="project-info">
                     <h3 class="project-title">Planetoid</h3>
@@ -343,6 +441,9 @@
 
                 <div class="experience-item">
                 <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/om.png" alt="Owens & Minor Logo" class="logo-image">
+                    </div>
                     <h3 class="experience-title">ID - Tech & Innovation, Global L&D</h3>
                     <p class="experience-company">Owens & Minor</p>
                 </div>
@@ -350,6 +451,9 @@
             </div>
             <div class="experience-item">
                 <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/msi.png" alt="Motorola Solutions Logo" class="logo-image">
+                    </div>
                     <h3 class="experience-title">Designer</h3>
                     <p class="experience-company">Motorola Solutions</p>
                 </div>
@@ -358,6 +462,9 @@
             
             <div class="experience-item">
                 <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/tp.png" alt="TrainingPort.net Logo" class="logo-image">
+                    </div>
                     <h3 class="experience-title">E-Learning Developer</h3>
                     <p class="experience-company">TrainingPort.net</p>
                 </div>
@@ -366,6 +473,9 @@
             
             <div class="experience-item">
                 <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/ubc_logo.png" alt="University of British Columbia Logo" class="logo-image">
+                    </div>
                     <h3 class="experience-title">Sr. Teaching Assistant</h3>
                     <p class="experience-company">University of British Columbia</p>
                     <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
@@ -375,6 +485,9 @@
 
             <div class="experience-item">
                 <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/interfor_logo.png" alt="Interfor Corporation Logo" class="logo-image">
+                    </div>
                     <h3 class="experience-title">Content and Insights Specialist</h3>
                     <p class="experience-company">Interfor Corporation</p>
                     <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
@@ -384,6 +497,9 @@
 
             <div class="experience-item">
                 <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/ubyssey_logo.png" alt="The Ubyssey Publications Logo" class="logo-image">
+                    </div>
                     <h3 class="experience-title">Head Editor - Media</h3>
                     <p class="experience-company">The Ubyssey Publications</p>
                     <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
@@ -393,6 +509,9 @@
 
             <div class="experience-item">
                 <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/ubc_logo.png" alt="University of British Columbia Logo" class="logo-image">
+                    </div>
                     <h3 class="experience-title">Learning Technology & Digital Media Specialist</h3>
                     <p class="experience-company">University of British Columbia</p>
                     <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
@@ -402,6 +521,9 @@
 
             <div class="experience-item">
                 <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/exun.png" alt="Exun Clan Logo" class="logo-image">
+                    </div>
                     <h3 class="experience-title">Vice-President</h3>
                     <p class="experience-company">Exun Clan</p>
                     <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
@@ -409,6 +531,89 @@
                 <div class="year-badge">2017-2018</div>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="section certifications" id="certifications">
+    <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="certifications-container">
+            <button class="cert-slider-btn cert-prev" id="certPrev">‹</button>
+            <div class="certifications-marquee" id="certificationsMarquee">
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~6J2XJTLW7WUQ/CERTIFICATE_LANDING_PAGE~6J2XJTLW7WUQ.jpeg" alt="Learning Design with GenAI" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Learning Design with GenAI</h4>
+                        <p>University of Michigan</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~2X5FXZYO1CTR/CERTIFICATE_LANDING_PAGE~2X5FXZYO1CTR.jpeg" alt="L&D" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Learning and Development</h4>
+                        <p>HRCI</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~DYZ77V26FHHR/CERTIFICATE_LANDING_PAGE~DYZ77V26FHHR.jpeg" alt="gamification" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Gamification</h4>
+                        <p>University of Pennsylvania</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~BHR5IY7Z9L33/CERTIFICATE_LANDING_PAGE~BHR5IY7Z9L33.jpeg" alt="cybersecurity" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Cybersecurity Tools: Linux & SQL</h4>
+                        <p>Google</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~X8FVL2FSCKYU/CERTIFICATE_LANDING_PAGE~X8FVL2FSCKYU.jpeg" alt="cybersecurity" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Law & Economics of Media Platforms</h4>
+                        <p>University of Chicago</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~CS9MWMW882AV/CERTIFICATE_LANDING_PAGE~CS9MWMW882AV.jpeg" alt="cybersecurity" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Network Security</h4>
+                        <p>Google</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~WMTNQAILSNU8/CERTIFICATE_LANDING_PAGE~WMTNQAILSNU8.jpeg" alt="cybersecurity" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Managing the Organization</h4>
+                        <p>University of Illinois Urbana-Champaign</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~OULXSUPGCJZ9/CERTIFICATE_LANDING_PAGE~OULXSUPGCJZ9.jpeg" alt="cybersecurity" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Designing the Organization</h4>
+                        <p>University of Illinois Urbana-Champaign</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~T34Z0KFNAB0C/CERTIFICATE_LANDING_PAGE~T34Z0KFNAB0C.jpeg" alt="Vibe Coding" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Vibe Coding - Cursor AI</h4>
+                        <p>Scrimba</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~N3HURC59GJ3S/CERTIFICATE_LANDING_PAGE~N3HURC59GJ3S.jpeg" alt="UX Design" class="cert-image">
+                    <div class="cert-overlay">
+                        <h4>Crash Course in Data Scince</h4>
+                        <p>Johns Hopkins University</p>
+                    </div>
+                </div>
+            </div>
+            <button class="cert-slider-btn cert-next" id="certNext">›</button>
         </div>
     </div>
 </section>
