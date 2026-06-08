@@ -125,8 +125,7 @@
             <a href="#top"><div class="logo">Akshay K.</div></a>
             <nav id="navMenu">
                 <ul>
-                    <!-- <li><a href="#about">About</a></li> -->
-                    <li><a href="#srvices">Services</a></li>
+                    <li><a href="#about-me">About Me</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#certifications">Certifications</a></li>
@@ -138,7 +137,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="about">
+    <section class="hero" id="top">
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Hi, I'm <span style="color: var(--primary-color)">Akshay</span></h1>
@@ -148,12 +147,14 @@
             </div>
             <div class="hero-image">
                 <!-- SVG Illustration of person working on computer -->
-                <img src="images/hero-banner1.png" width="50%" >
+                <img src="images/hero-banner1.png" alt="Akshay working at a desk" class="hero-banner">
             </div>
         </div>
         <!-- Geometric shapes for background -->
         <div class="geometric-shapes circle1"></div>
         <div class="geometric-shapes circle2"></div>
+        <div class="geometric-shapes circle3"></div>
+        <div class="geometric-shapes circle4"></div>
     </section>
 
     <!-- Brand Bar
@@ -166,51 +167,30 @@
             <img src="/api/placeholder/120/30" alt="Brand Logo 5">
         </div>
     </section> -->
-    <section class="services-container" id="srvices">
-        <div class="section-title">
-            <h2 class="section-title" style="padding-top: 2em;">Services</h2>
-        </div>
-        
-        <div class="services-grid">
-            <!-- ID -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-book"></i>                </div>
-                <h3 class="service-title">eLearning Development</h3>
-                <p class="service-description">Learning Content Development</p>
-            </div>
-            
-              <!-- Coding Card -->
-              <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-file-code"></i>
+    <section class="section about-me" id="about-me">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-me-grid">
+                <div class="about-me-text">
+                    <p>I've worked with organizations across various industries, ranging from IT and cybersecurity to aviation and healthcare, to solve performance challenges and drive measurable business outcomes.</p>
+                    <p>By leveraging performance gap analysis, learning analytics, and employee performance data, I uncover actionable insights that help leaders make data-driven decisions, and improve organizational performance.</p>
+                    <p>Passionate about solving business problems at the intersection of people, data, and business impact.</p>
                 </div>
-                <h3 class="service-title">Development</h3>
-                <p class="service-description">Web Applications, Software Development, Data Science</p>
-            </div>
-
-            <!-- Design Card -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fa-solid fa-pen-nib"></i>
+                <div class="about-me-interests">
+                    <h3 class="interests-title">Hobbies &amp; Interests</h3>
+                    <div class="interest-bubbles">
+                        <span class="interest-bubble">Traveling</span>
+                        <span class="interest-bubble">Sports</span>
+                        <span class="interest-bubble">Cooking</span>
+                        <span class="interest-bubble">Reading</span>
+                        <span class="interest-bubble">Music</span>
+                    </div>
                 </div>
-                <h3 class="service-title">Digital Design</h3>
-                <p class="service-description">UI/UX, Brand Design, Product Design</p>
             </div>
-            
-            <!-- Animations Card -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-video"></i>
-                </div>
-                <h3 class="service-title">Animations</h3>
-                <p class="service-description">Motion Graphics, Advertisements, Educational Videos</p>
-            </div>
-            
-          
         </div>
     </section>
-    <!-- Services Section -->
+
+    <!-- Services Section (removed) -->
     <!-- <section class="section services" id="services">
         <div class="container">
             <h2 class="section-title">What I Do</h2>
@@ -251,24 +231,41 @@
    <section class="section projects" id="projects">
     <div class="container">
         <h1 class="section-title">Projects</h1>
-        <div class="projects-grid">
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web-tool">Web Apps &amp; Tools</button>
+            <button class="filter-btn" data-filter="learning-solutions">Learning Solutions</button>
+            <button class="filter-btn" data-filter="design">Designs</button>
+            <button class="filter-btn" data-filter="game">Games</button>
+        </div>
+        <div class="projects-grid" id="projectsGrid">
 
-            <!-- Project 1 -->
-            <a href="https://www.youtube.com/watch?v=Z0jztrM3p6Y&ab_channel=TheUniversityofBritishColumbia" target="_blank">
+            <a href="http://reviewd.org/" target="_blank" class="project-item" data-category="web-tool">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/uwt.png');">
+                <div class="project-image" style="background-image: url('images/review_homepage.png');">
                 </div>
                 <div class="project-info">
-                    <h3 class="project-title">Workday @ UBC</h3>
-                    <p class="project-category">Design & Motion Graphics (After Effects, Photoshop, Camtasia) | UBC ERP Tutorials</p>
-                    <p>Collaborated with the Office of the Dean, UBC Marketing Team, and external contractors to produce a launch video for the Workday ERP system and tutorial platform.</p>
+                    <h3 class="project-title">Reviewd</h3>
+                    <p class="project-category">Video Review Platform (Next.JS, React)| Freelance Tool</p>
+                    <p>A video review platform that converts hosted video links into collaborative review workspaces, streamlining stakeholder feedback collection and collaboration throughout the review process.</p>
                 </div>
             </div>
         </a>
-            
-                 <!-- Project 4 -->
-                 <a href="https://drive.google.com/file/d/1uzatZo0w7S3XqBs_AW5ZDuTTdnvp68td/view?usp=sharing" target="_blank">
-                 <div class="project-card">
+
+            <a href="https://cognitoblox.netlify.app/" target="_blank" class="project-item" data-category="web-tool learning-solutions">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('images/cb.png');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Cognito Blox</h3>
+                        <p class="project-category">Learning Components Library (Next.js, Tailwind CSS) | Articulate Community</p>
+                        <p>Developed a tool that automates the generation of engaging, customizable learning components, enhancing both learner experience and designer productivity.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1uzatZo0w7S3XqBs_AW5ZDuTTdnvp68td/view?usp=sharing" target="_blank" class="project-item" data-category="learning-solutions">
+                <div class="project-card">
                     <div class="project-image" style="background-image: url('images/exting.png');">
                     </div>
                     <div class="project-info">
@@ -279,19 +276,19 @@
                 </div>
             </a>
 
-              <a href="https://cognitoblox.netlify.app/" target="_blank">
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('images/cb.png');">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Cognito Blox</h3>
-                        <p class="project-category">Learning Components Library (Next.js, Tailwind CSS) | Articulate Community</p>
-                        <p>Developed a tool that automates the generation of engaging, customizable learning components, enhancing both learner experience and designer productivity.</p>
-                    </div>
+            <a href="https://www.youtube.com/watch?v=Z0jztrM3p6Y&ab_channel=TheUniversityofBritishColumbia" target="_blank" class="project-item" data-category="design learning-solutions">
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('images/uwt.png');">
                 </div>
-                </a> 
-    
-                <a href="https://drive.google.com/file/d/120Y0CGJvLriMPM2He7hQSkAJY_dyqApo/view?usp=sharing" target="_blank">
+                <div class="project-info">
+                    <h3 class="project-title">Workday @ UBC</h3>
+                    <p class="project-category">Design & Motion Graphics (After Effects, Photoshop, Camtasia) | UBC ERP Tutorials</p>
+                    <p>Collaborated with the Office of the Dean, UBC Marketing Team, and external contractors to produce a launch video for the Workday ERP system and tutorial platform.</p>
+                </div>
+            </div>
+        </a>
+
+                <a href="https://drive.google.com/file/d/120Y0CGJvLriMPM2He7hQSkAJY_dyqApo/view?usp=sharing" target="_blank" class="project-item" data-category="learning-solutions">
                 <div class="project-card">
                     <div class="project-image" style="background-image: url('images/haloinstall.png');">
                     </div>
@@ -303,20 +300,20 @@
                 </div>
                 </a>
 
-             <a href="https://colab.research.google.com/github/akhand227/link-tracking/blob/main/Link%20Validator.ipynb" target="_blank">
+             <a href="https://colab.research.google.com/github/akhand227/link-tracking/blob/main/Link%20Validator.ipynb" target="_blank" class="project-item" data-category="web-tool">
                 <div class="project-card">
                     <div class="project-image" style="background-image: url('images/validate-links.png');">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">SCORM Citation Tracking</h3>
-                        <p class="project-category">Data Analysis (Python) | Trainingport</p>
+                        <p class="project-category">Analysis (Python) | Trainingport - Internal Tool</p>
                         <p>Developed an automation script to streamline updates of aviation training materials, ensuring compliance with current FAA, EASA, and Transport Canada regulations.</p>
                     </div>
                 </div>
             </a>
             
               <!-- Project 2 -->
-              <a href="https://drive.google.com/file/d/1aDJpUHPzxCvettaD_Sz6rfPFJxL4KhG7/view?pli=1" target="_blank">
+              <a href="https://drive.google.com/file/d/1aDJpUHPzxCvettaD_Sz6rfPFJxL4KhG7/view?pli=1" target="_blank" class="project-item" data-category="learning-solutions design">
                 <div class="project-card">
                     <div class="project-image" style="background-image: url('images/forestry.png');">
                     </div>
@@ -329,7 +326,7 @@
                 </a>
             
             <!-- Project 2 -->
-              <a href="https://akshayubc-ubc-course-compare-main-c7nu6s.streamlit.app/" target="_blank">
+              <a href="https://akshayubc-ubc-course-compare-main-c7nu6s.streamlit.app/" target="_blank" class="project-item" data-category="web-tool">
                 <div class="project-card">
                     <div class="project-image" style="background-image: url('images/grade_comparison.png');">
                     </div>
@@ -342,7 +339,7 @@
                 </a>
 
             
-                  <a href="https://www.behance.net/gallery/111407367/Social-Media-AdvertisingMarketing-Kit" target="_blank">
+                  <a href="https://www.behance.net/gallery/111407367/Social-Media-AdvertisingMarketing-Kit" target="_blank" class="project-item" data-category="design">
                 <div class="project-card">
                     <div class="project-image" style="background-image: url('images/sm.png');">
                     </div>
@@ -355,7 +352,7 @@
             </a>
             
                     <!-- Project 3 -->
-            <a href="brain.html" target="_blank">
+            <a href="brain.html" target="_blank" class="project-item" data-category="learning-solutions">
                 <div class="project-card">
                     <div class="project-image" style="background-image: url('https://www.renderhub.com/davidzafra1/brain/brain-01.jpg');">
                     </div>
@@ -367,19 +364,19 @@
                 </div>
             </a>
 
-                <a href="https://akshayubc.github.io/gradient-generator/" target="_blank">
+                <a href="https://akshayubc.github.io/gradient-generator/" target="_blank" class="project-item" data-category="web-tool">
                 <div class="project-card">
                     <div class="project-image" style="background-image: url('images/gradi.png');">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Gradient Generator</h3>
-                        <p class="project-category">HTML, CSS, JS, Canvas API | Independent</p>
+                        <p class="project-category">HTML, CSS, JS, Canvas API | Internal Tool IRP</p>
                         <p>Built a web-based gradient generator tool to create multicolor gradients and export PNG/JPEG in preset or custom sizes for slide, demo, and eLearning backgrounds. </p>
                     </div>
                 </div>
             </a>                    
 
-                <a href="https://akshayubc.github.io/coak/" target="_blank">
+                <a href="https://akshayubc.github.io/coak/" target="_blank" class="project-item" data-category="web-tool">
                 <div class="project-card">
                 <div class="project-image" style="background-image: url('images/coak.png');">
                 </div>
@@ -391,7 +388,7 @@
             </div>
         </a>
 
-             <a href="https://akshayubc.github.io/planetoid/" target="_blank">
+             <a href="https://akshayubc.github.io/planetoid/" target="_blank" class="project-item" data-category="game">
             <div class="project-card">
                 <div class="project-image" style="background-image: url('images/Planetoid.jpg');">
                 </div>
@@ -405,7 +402,7 @@
 
             
             
-             <a href="https://www.youtube.com/watch?v=MxhaTj35Uxg&ab_channel=xay" target="_blank">
+             <a href="https://www.youtube.com/watch?v=MxhaTj35Uxg&ab_channel=xay" target="_blank" class="project-item" data-category="design">
                 <div class="project-card">
                     <div class="project-image" style="background-image: url('images/iphone.png');">
                     </div>
@@ -451,18 +448,26 @@
         <h2 class="section-title">Work Experience</h2>
         <div class="experience-timeline">
             <div class="timeline-line"></div>
-            
-            
 
-                <div class="experience-item">
+            <div class="experience-item">
+                <div class="experience-content">
+                    <div class="company-logo">
+                        <img src="images/acclogo.png" alt="Accendra Health Logo" class="logo-image">
+                    </div>
+                    <h3 class="experience-title">ID - Learning Technology & Design</h3>
+                    <p class="experience-company">Accendra Health</p>
+                </div>
+                <div class="year-badge">2026 - Present</div>
+            </div>
+            <div class="experience-item">
                 <div class="experience-content">
                     <div class="company-logo">
                         <img src="images/om.png" alt="Owens & Minor Logo" class="logo-image">
                     </div>
-                    <h3 class="experience-title">ID - Tech & Innovation, Global L&D</h3>
+                    <h3 class="experience-title">ID - Tech & Innovation</h3>
                     <p class="experience-company">Owens & Minor</p>
                 </div>
-                <div class="year-badge">2025 - Present</div>
+                <div class="year-badge">2025 - 2026</div>
             </div>
             <div class="experience-item">
                 <div class="experience-content">
@@ -534,7 +539,7 @@
                 <div class="year-badge">2020</div>
             </div>
 
-            <div class="experience-item">
+            <!-- <div class="experience-item">
                 <div class="experience-content">
                     <div class="company-logo">
                         <img src="images/exun.png" alt="Exun Clan Logo" class="logo-image">
@@ -542,9 +547,9 @@
                     <h3 class="experience-title">Vice-President</h3>
                     <p class="experience-company">Exun Clan</p>
                     <!-- <p>Created visual designs for websites and marketing materials for clients across various industries, collaborating closely with development teams.</p> -->
-                </div>
-                <div class="year-badge">2017-2018</div>
-            </div>
+                <!-- </div>
+                <div class="year-badge">2017-2018</div> -->
+            <!-- </div> --> 
 
         </div>
     </div>
@@ -693,3 +698,28 @@
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Your Email"> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const filter = btn.dataset.filter;
+
+                    filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+
+                    projectItems.forEach(function(item) {
+                        const categories = item.dataset.category.split(' ');
+                        const show = filter === 'all' || categories.includes(filter);
+                        item.classList.toggle('hidden', !show);
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
